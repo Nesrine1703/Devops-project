@@ -15,4 +15,10 @@ stages{
             git branch: 'MayssaOUERFELLI',
             url: 'https://github.com/Nesrine1703/Devops-project'
         }}
+        stage('SonarQube Analysis') {
+            steps {
+              // echo 'sonarqube'
+                sh 'mvn sonar:sonar -Dsonar.login=b1d086ff85ccfc9f180f38b22458a59decf18d31'
+            }
+        } 
 }}
