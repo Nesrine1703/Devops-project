@@ -18,7 +18,7 @@ stages{
         } 
     stage('pulling the code from GITHUB'){
         steps{
-            git branch: 'MayssaOUERFELLI'
+            git branch: 'MayssaOUERFELLI',
             url: 'https://github.com/Nesrine1703/Devops-project'
         }}
 
