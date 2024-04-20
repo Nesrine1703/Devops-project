@@ -1,0 +1,18 @@
+pipeline{
+    
+    agent any
+
+
+stages{
+      stage('clean workspace')
+        {
+            steps{
+                cleanWs()
+                 }
+        } 
+    stage('pulling the code from GITHUB'){
+        steps{
+            git branch: 'MayssaOUERFELLI',
+            url: 'https://github.com/Nesrine1703/Devops-project'
+        }}
+}}
