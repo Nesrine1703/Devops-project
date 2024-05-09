@@ -13,7 +13,7 @@ services:
     image: "mysql:5.6"
     restart: unless-stopped
     environment:
-      - MYSQL_DATABASE=achatdb
       - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=achatdb
     ports:
       - "3306:3306"
