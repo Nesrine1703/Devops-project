@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat.services;
+package tn.esprit.rh.achat;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,13 +7,12 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import tn.esprit.rh.achat.entities.Fournisseur;
 import tn.esprit.rh.achat.repositories.FournisseurRepository;
+import tn.esprit.rh.achat.services.FournisseurServiceImpl;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static jdk.internal.org.objectweb.asm.util.CheckClassAdapter.verify;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
 class FournisseurServiceImplTest {
