@@ -14,6 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'cleaning and compiling code'
+                sh """java -version"""
                 // Lancement de la commande Maven pour nettoyer et compiler le projet
                 sh 'mvn clean compile'
             }
