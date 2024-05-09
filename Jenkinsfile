@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Compile') {
             steps {
                 echo 'cleaning and compiling code'
                 sh """java -version"""
@@ -21,7 +21,19 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-                stage('SonarQube'){
+        stage('Build') {
+            steps {
+                echo 'Package the project '
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Nexus'){
+            steps{
+                echo 'starting nexus deployment'
+                sh 'mvn deploy  -DskipTests' 
+            }
+        }
+        stage('SonarQube'){
             steps{
                 echo 'starting sonarqube'
                 sh 'mvn sonar:sonar  -Dsonar.host.url=http://192.168.89.176:9000  -Dsonar.login=admin -Dsonar.password=Lemonade2023' 
