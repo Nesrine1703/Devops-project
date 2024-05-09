@@ -35,10 +35,13 @@ pipeline {
         }
         stage('Docker image'){
             steps{
-                echo 'starting docker image build'
-                sh 'sudo docker build -t amenibenjeddou/achat:1.0.0 .'  
-                echo 'Push Docker image to Docker Hub'
-                sh 'sudo docker push amenibenjeddou/achat:1.0.0'
+                echo 'starting docker image'
+                script {
+                        docker.build('amenibenjeddou/achat-image')
+                        docker.withRegistry('', 'docker-hub-credentials') {
+                            docker.image('achat-image').push('latest')
+                    }
+                }
             }
         }
         stage('SonarQube'){
