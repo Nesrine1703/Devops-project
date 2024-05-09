@@ -7,9 +7,9 @@ services:
     ports:
       - "8089:8089"
     depends_on:
-      -  db-mysql
+      -  mysql
 
-  db-mysql:
+  mysql:
     image: "mysql:5.6"
     restart: unless-stopped
     environment:
