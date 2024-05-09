@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        jdk 'OpenJDK 8'
+        jdk 'JAVA_HOME'
     }
     stages {
         stage('GIT Checkout') {
