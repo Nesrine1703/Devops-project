@@ -39,7 +39,7 @@ pipeline {
                 script {
                         docker.build('amenibenjeddou/achat-image')
                         docker.withRegistry('', 'docker-hub-credentials') {
-                            docker.image('achat-image').push('latest')
+                            docker.image('amenibenjeddou/achat-image').push('latest')
                     }
                 }
             }
