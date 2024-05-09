@@ -33,6 +33,14 @@ pipeline {
                 sh 'mvn deploy  -DskipTests' 
             }
         }
+        stage('Docker image'){
+            steps{
+                echo 'starting docker image build'
+                sh 'docker build -t amenibenjeddou/achat:1.0.0 .'  
+                echo 'Pushi Docker image to Docker Hub'
+                sh 'docker push amenibenjeddou/achat:1.0.0'
+            }
+        }
         stage('SonarQube'){
             steps{
                 echo 'starting sonarqube'
