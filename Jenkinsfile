@@ -36,9 +36,9 @@ pipeline {
         stage('Docker image'){
             steps{
                 echo 'starting docker image build'
-                sh 'docker build -t amenibenjeddou/achat:1.0.0 .'  
-                echo 'Pushi Docker image to Docker Hub'
-                sh 'docker push amenibenjeddou/achat:1.0.0'
+                sh 'sudo docker build -t amenibenjeddou/achat:1.0.0 .'  
+                echo 'Push Docker image to Docker Hub'
+                sh 'sudo docker push amenibenjeddou/achat:1.0.0'
             }
         }
         stage('SonarQube'){
