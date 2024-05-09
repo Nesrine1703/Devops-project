@@ -21,5 +21,11 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+                stage('SonarQube'){
+            steps{
+                echo 'starting sonarqube'
+                sh 'mvn sonar:sonar  -Dsonar.host.url=http://192.168.89.176:9000  -Dsonar.login=admin -Dsonar.password=Lemonade2023' 
+            }
+        }
     }
 }
