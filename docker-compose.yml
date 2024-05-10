@@ -1,4 +1,4 @@
- version: "4"
+version: "4"
 
 services:
   mysqldb:
@@ -18,13 +18,14 @@ services:
     ports:
       - 8089:8089
     environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url" : "jdbc:mysql://mysqldb:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-        "spring.datasource.username" : "root",
-        "spring.datasource.password" : null ,
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
+      SPRING_APPLICATION_JSON: |
+        {
+          "spring.datasource.url" : "jdbc:mysql://mysqldb:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+          "spring.datasource.username" : "root",
+          "spring.datasource.password" : null ,
+          "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+          "spring.jpa.hibernate.ddl-auto" : "update"
+        }
     stdin_open: true
     tty: true
 
