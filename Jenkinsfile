@@ -47,7 +47,7 @@ pipeline {
         stage('Docker Compose') {
             steps {
                 echo 'Starting Docker Compose'
-                sh 'docker-compose up -d'
+                sh 'docker compose up -d'
             }
         }
         stage('SonarQube'){
