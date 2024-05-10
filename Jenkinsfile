@@ -26,6 +26,11 @@ pipeline {
                 echo 'Package the project '
                 sh 'mvn clean package -DskipTests'
             }
+        stage('Test') {
+            steps {
+                echo 'test the project '
+                sh 'mvn clean test'
+            }
         }
         stage('Nexus'){
             steps{
